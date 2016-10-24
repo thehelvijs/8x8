@@ -1,7 +1,7 @@
 # Direct drive LED 8x8 matrix for Arduino
 
 
-# Everything you need is here https://mightytrueno.github.io/8x8/
+# Everything you need is here https://http://ewlbo.github.io/8x8/
 
 ## Getting started
 
