@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>8x8 DIRECT DRIVE LED MATRIX</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='javascripts/jquery.ba-hashchange.min.js'></script>
+    <script type='text/javascript' src='javascripts/dynamicpage.js'></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+	
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+			<div id="wrapper">
+
+					<section id="main">
+						<header>
+							
+							<h1>8x8 DIRECT DRIVE LED MATRIX - SOFTWARE</h1>
+							<p>HELVIJS ADAMS</p>
+							<br>
+						
+						</header>
+						
+						<footer>
+							<ul class="icons">
+								<li><form action="matrix-generator.html">
+										<input type="submit" value="Matrix Generator" />
+									</form></li>
+								<li><form action="hardware.html">
+										<input type="submit" value="Hardware" />
+									</form></li>
+									<li><form action="software.html">
+										<input type="submit" value="Software" />
+									</form></li>
+									<li><form action="https://github.com/mightytrueno/8x8">
+										<input type="submit" value="Github" />
+									</form></li>
+									
+							</ul>
+						</footer>
+						
+						<h2>
+						software<br>
+						</h2>
+						<h3>
+						there are few scripts to run matrix, most of them are made for non-diy matrix which has multiplexer<br>you can get those scripts <a target="_blank" href="http://playground.arduino.cc/Main/DirectDriveLEDMatrix">here - Arduino playground</a><br><br>
+						therefore I made a script which runs the matrix (not the best way, but it works)<br><br>
+						
+						
+						</h3>
+						<h1>
+						<font color="red"><a download href="https://github.com/mightytrueno/8x8/raw/master/arduino/_8x8/_8x8.ino" target="_blank">download script</a></font>
+						</h1>
+						<h2>
+						Set-up
+						</h2>
+						<h3>
+						now that you have wired everything up, connect your arduino to pc and upload the code that you downloaded <a download href="https://github.com/mightytrueno/8x8/raw/master/arduino/_8x8/_8x8.ino" target="_blank">(_8x8.ino)</a><br>
+						to change the pattern, go to <a href="matrix-generator.html">matrix-generator page</a> and make your pattern, copy it and replace with existing pattern here: <br><br>LED on: 1<br>LED off: 0<br><br>
+						int pattern[8][8] = { <Br>
+{  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 },<Br>
+{  1 ,  0 ,  0 ,  0 ,  0 ,  0 ,  0 ,  1 },<Br>
+{  1 ,  0 ,  1 ,  0 ,  0 ,  1 ,  0 ,  1 },<Br>
+{  1 ,  0 ,  0 ,  0 ,  0 ,  0 ,  0 ,  1 },<Br>
+{  1 ,  0 ,  1 ,  0 ,  0 ,  1 ,  0 ,  1 },<Br>
+{  1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 },<Br>
+{  1 ,  0 ,  0 ,  0 ,  0 ,  0 ,  0 ,  1 },<Br>
+{  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 ,  1 } <Br>
+};<Br>
+						</h3>
+						<br>
+						
+					</section>
+
+					<footer id="footer">
+						<ul class="copyright">
+							<li></li>
+						</ul>
+					</footer>
+
+			</div>
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+<script>
+$(function() {
+
+    var newHash      = "",
+        $mainContent = $("#main-content"),
+        $pageWrap    = $("#page-wrap"),
+        baseHeight   = 0,
+        $el;
+        
+    $pageWrap.height($pageWrap.height());
+    baseHeight = $pageWrap.height() - $mainContent.height();
+    
+    $("nav").delegate("a", "click", function() {
+        window.location.hash = $(this).attr("href");
+        return false;
+    });
+    
+    $(window).bind('hashchange', function(){
+    
+        newHash = window.location.hash.substring(1);
+        
+        if (newHash) {
+            $mainContent
+                .find("#guts")
+                .fadeOut(200, function() {
+                    $mainContent.hide().load(newHash + " #guts", function() {
+                        $mainContent.fadeIn(200, function() {
+                            $pageWrap.animate({
+                                height: baseHeight + $mainContent.height() + "px"
+                            });
+                        });
+                        $("nav a").removeClass("current");
+                        $("nav a[href='"+newHash+"']").addClass("current");
+                    });
+                });
+        };
+        
+    });
+    
+    $(window).trigger('hashchange');
+
+});
+</script>
+	</body>
+</html>
