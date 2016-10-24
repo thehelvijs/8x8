@@ -1,7 +1,7 @@
 # Direct drive LED 8x8 matrix for Arduino
 
 
-# Everything you need is here https://http://ewlbo.github.io/8x8/
+# Everything you need is here https://ewlbo.github.io/8x8/
 
 ## Getting started
 
@@ -22,7 +22,7 @@ I would suggest to test it out on breadboard with 2x6 LEDs just to see how it wo
 
 ### Wiring
 
-Wiring diagram can be found here https://mightytrueno.github.io/8x8/hardware.html?
+Wiring diagram can be found here https://ewlbo.github.io/8x8/hardware.html?
 
 ### Software
 
@@ -41,6 +41,6 @@ I made a simple script in Arduino software which just scans through 2D arrays se
 
 ### Pattern
 
-To make the pattern I made a generator which can be found here https://mightytrueno.github.io/8x8/matrix-generator.html?
+To make the pattern I made a generator which can be found here https://ewlbo.github.io/8x8/matrix-generator.html?
 
 
