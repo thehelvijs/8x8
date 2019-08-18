@@ -22,7 +22,7 @@ I would suggest to test it out on breadboard with 2x6 LEDs just to see how it wo
 
 ### Wiring
 
-Wiring diagram can be found here https://ewlbo.github.io/8x8/hardware.html?
+Wiring diagram can be found here https://thehelvijs.github.io/8x8/hardware.html?
 
 ### Software
 
